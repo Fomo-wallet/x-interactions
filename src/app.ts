@@ -1,14 +1,16 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import tweetsRoutes from './routes/tweets';
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
+import tweetsRoutes from "./routes/tweets";
 
 dotenv.config();
 
 const app = express();
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // Register routes
-app.use('/api', tweetsRoutes);
+app.use("/api", tweetsRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

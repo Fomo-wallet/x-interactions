@@ -1,4 +1,9 @@
 import { OLLAMA_ENDPOINT, OLLAMA_MODEL } from "./constants";
+import { User } from "./types";
+import { promises as fs } from "fs";
+import path from "path";
+
+const dataPath = path.join(__dirname, "../data/users.json");
 
 export async function generateContentForPostingTweet(prompt: string) {
   try {
@@ -48,6 +53,20 @@ export async function generateContentForPostingTweet(prompt: string) {
     return content;
   } catch (error) {
     console.error("Error generating content with Llama:", error);
+    throw error;
+  }
+}
+
+export async function readUsers(): Promise<User[]> {
+  try {
+    const data = await fs.readFile(dataPath, "utf8");
+    return JSON.parse(data);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code === "ENOENT") {
+      await fs.mkdir(path.dirname(dataPath), { recursive: true });
+      await fs.writeFile(dataPath, "[]");
+      return [];
+    }
     throw error;
   }
 }

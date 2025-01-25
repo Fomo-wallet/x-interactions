@@ -1,0 +1,54 @@
+[
+  {
+    "username": "vwakesahu",
+    "score": 6.8,
+    "totalTweets": 2,
+    "hintRequests": 1,
+    "lastUpdated": 1737841712742,
+    "requests": [
+      {
+        "tweet": "Wait waitttt, let me come…..",
+        "score": 6.8,
+        "hintCheck": {
+          "isHintRequest": true,
+          "confidence": 8,
+          "type": "hint",
+          "analysis": "The tweet is requesting a hint, likely asking for help in understanding the context or next steps."
+        },
+        "scores": {
+          "clarity": 8,
+          "specificity": 6,
+          "context": 4,
+          "effort": 9,
+          "explanation": "The tweet is somewhat clear, but lacks specificity about what help is needed. The context is vague, and the effort in explaining the need is high due to the incomplete sentence structure."
+        }
+      }
+    ]
+  },
+  {
+    "username": "devswayam",
+    "score": 7.4,
+    "totalTweets": 2,
+    "hintRequests": 1,
+    "lastUpdated": 1737841719617,
+    "requests": [
+      {
+        "tweet": "RT @DevSwayam: Hey anon,\never wondered how the commit &amp; reveal approach helps with private on-chain voting while keeping vote confidential?…",
+        "score": 7.4,
+        "hintCheck": {
+          "isHintRequest": true,
+          "confidence": 8,
+          "type": "hint",
+          "analysis": "The user is expressing curiosity about a specific concept (commit and reveal approach) and seems to be seeking clarification or brief information on how it relates to private on-chain voting"
+        },
+        "scores": {
+          "clarity": 8,
+          "specificity": 6,
+          "context": 7,
+          "effort": 9,
+          "explanation": "The tweet is clear and concise, explaining the request in a straightforward manner. However, it lacks specific details about what 'commit & reveal approach' entails and how it applies to private on-chain voting. The context of the conversation seems relevant, but could be clarified for a broader audience. The effort exerted by the original poster (@DevSwayam) is evident through their curiosity-driven question."
+        }
+      }
+    ]
+  }
+]
