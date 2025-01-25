@@ -1,0 +1,4 @@
+.env
+node_modules/
+.DIST_Store
+*cookies.json
