@@ -50,5 +50,21 @@
         }
       }
     ]
+  },
+  {
+    "username": "devmodiji",
+    "score": 0,
+    "totalTweets": 2,
+    "hintRequests": 0,
+    "lastUpdated": 1737851780630,
+    "requests": []
+  },
+  {
+    "username": "CertifyBlocks",
+    "score": 0,
+    "totalTweets": 2,
+    "hintRequests": 0,
+    "lastUpdated": 1737852272966,
+    "requests": []
   }
 ]

@@ -1,9 +1,9 @@
-import { Scraper } from 'agent-twitter-client';
-import fs from 'fs';
-import path from 'path';
+import { Scraper } from "agent-twitter-client";
+import fs from "fs";
+import path from "path";
 
 // Define the cookie file path
-const COOKIE_FILE_PATH = path.join(__dirname, 'cookies.json');
+const COOKIE_FILE_PATH = path.join(__dirname, "cookies.json");
 
 /**
  * Get or create a scraper instance.
@@ -13,22 +13,29 @@ const COOKIE_FILE_PATH = path.join(__dirname, 'cookies.json');
 const getScraper = async () => {
   const scraper = new Scraper();
 
-
   // Check if the scraper is logged in
   const isLoggedIn = await scraper.isLoggedIn();
   if (!isLoggedIn) {
-    console.log('Not logged in. Logging in with credentials...');
+    console.log("Not logged in. Logging in with credentials...");
+    console.log(
+      "Twitter Password:",
+      process.env.TWITTER_PASSWORD,
+      "Twitter email:",
+      process.env.TWITTER_EMAIL,
+      "Twitter Username :",
+      process.env.TWITTER_USERNAME
+    );
     await scraper.login(
-      process.env.TWITTER_USERNAME || '',
-      process.env.TWITTER_PASSWORD || '',
-      process.env.TWITTER_EMAIL || '',
-      process.env.TWITTER_API_KEY || '',
-      process.env.TWITTER_API_SECRET_KEY || '',
-      process.env.TWITTER_ACCESS_TOKEN || '',
-      process.env.TWITTER_ACCESS_TOKEN_SECRET || ''
+      process.env.TWITTER_USERNAME || "",
+      process.env.TWITTER_PASSWORD || "",
+      process.env.TWITTER_EMAIL || "",
+      process.env.TWITTER_API_KEY || "",
+      process.env.TWITTER_API_SECRET_KEY || "",
+      process.env.TWITTER_ACCESS_TOKEN || "",
+      process.env.TWITTER_ACCESS_TOKEN_SECRET || ""
     );
   } else {
-    console.log('Scraper is already logged in.');
+    console.log("Scraper is already logged in.");
   }
 
   return scraper;
